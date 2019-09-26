@@ -18,6 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
   </head>
@@ -28,67 +29,50 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-      <table class="table table-hover">
+    <div class="container ">
+        <script src="lib/moment/moment.min.js"></script>
         
-        <tbody>
-          <tr>
-            <th scope="row">9:00 AM</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">10:00 AM</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">11:00 AM</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row">12:00 PM</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">1:00 PM</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">2:00 PM</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row">3:00 PM</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">4:00 PM</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">5:00 PM</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <script type="text/javascript">
+         
+        // DATE MOMENT.JS
+          $(document).ready(function() {   
+          
+            let m = moment();
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            $("#currentDay").text(m.format("dddd, MMMM, Mo YYYY"));
+            console.log(m.format("dddd MMM Mo YYYY"));
+          
+          })
+          </script>
+
+
+      <!-- Timeblocks go here -->
+      <table class="table table-bordered">
+          
+          <tbody>
+            <tr>
+              <th scope="row" >9:00</th>
+              <td colspan="2" class="col-8">Mark</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td colspan="2" class="col-8">Jacob</td>
+              <td class="col-1">@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td class="col-1">@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+  
+        </div>
+      </div>
+
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
 </html>
