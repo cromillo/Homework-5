@@ -34,7 +34,7 @@
         <div class="card-body border col-md-2 text-right bg-secondary text-white" id="time9">
           9:00 AM
         </div>
-        <input class="card-body border col-md-9" id="input9">
+        <input type="text" class="card-body border col-md-9" id="input9">
         </input>
         <button class="card-body border bg-info text-white col-md-1 " id="button9">
           @
@@ -45,7 +45,7 @@
         <div class="card-body border col-md-2 text-right bg-secondary text-white" id="time10">
           10:00 AM
         </div>
-        <input class="card-body border col-md-9" id="input10">
+        <input type="text" class="card-body border col-md-9" id="input10">
         </input>
         <button class="card-body border bg-info text-white col-md-1" id="button10">
           @
@@ -56,7 +56,7 @@
         <div class="card-body border col-md-2 text-right bg-secondary text-white" id="time11">
           11:00 AM
         </div>
-        <input class="card-body border col-md-9" id="input11">
+        <input type="text" class="card-body border col-md-9" id="input11">
         </input>
         <button class="card-body border bg-info text-white col-md-1" id="button11">
           @
@@ -67,7 +67,7 @@
         <div class="card-body border col-md-2 text-right bg-secondary text-white" id="time12">
           12:00 PM
         </div>
-        <input class="card-body border col-md-9" id="input12">
+        <input type="text" class="card-body border col-md-9" id="input12">
         </input>
         <button class="card-body border bg-info text-white col-md-1" id="button12">
           @
@@ -78,7 +78,7 @@
         <div class="card-body border col-md-2 text-right bg-secondary text-white" id="time1">
           1:00 PM
         </div>
-        <input class="card-body border col-md-9" id="input1">
+        <input type="text" class="card-body border col-md-9" id="input1">
         </input>
         <button class="card-body border bg-info text-white col-md-1" id="button1">
           @
@@ -86,7 +86,7 @@
       </div>
       <br><br>
       <div class="row">
-        <div class="card-body border col-md-2 text-right bg-secondary text-white" id="time2">
+        <div type="text" class="card-body border col-md-2 text-right bg-secondary text-white" id="time2">
           2:00 PM
         </div>
         <input class="card-body border col-md-9" id="input2">
@@ -97,7 +97,7 @@
       </div>
       <br><br>
       <div class="row">
-        <div class="card-body border col-md-2 text-right bg-secondary text-white" id="time3">
+        <div type="text" class="card-body border col-md-2 text-right bg-secondary text-white" id="time3">
           3:00 PM
         </div>
         <input class="card-body border col-md-9" id="input3">
@@ -111,7 +111,7 @@
         <div class="card-body border col-md-2 text-right bg-secondary text-white" id="time4">
           4:00 PM
         </div>
-        <input class="card-body border col-md-9" id="input4">
+        <input type="text" class="card-body border col-md-9" id="input4">
         </input>
         <button class="card-body border bg-info text-white col-md-1" id="button4">
           @
@@ -122,7 +122,7 @@
         <div class="card-body border col-md-2 text-right bg-secondary text-white" id="time5">
           5:00 PM
         </div>
-        <input class="card-body border col-md-9 bg-light" id="input5">
+        <input type="text" class="card-body border col-md-9 bg-light" id="input5">
         </input>
         <button class="card-body border bg-info text-white col-md-1" id="button5">
           @
@@ -141,10 +141,9 @@
 
   <!-- JAVASCRIPT -->
   <script type="text/javascript">
+  $(document).ready(function () {
 
-    // DATE MOMENT.JS
-    $(document).ready(function () {
-
+ // DATE MOMENT.JS
       let m = moment();
       console.log(m)
       $("#currentDay").text(m.format("dddd, MMMM D, YYYY"));
@@ -152,7 +151,20 @@
 
     })
 
-    //change row color to red when save button is clicked
+
+/* ???????  UNSUCCESSFUL code for row to turn red "ONLY" when there is input and save button is clicked 
+    
+    function checkedFilled () {
+      $(inputElem) = ("#input9");
+      if (inputElem.value == "") {inputElem.style.backgroundColor = "yellow";}
+    }
+    console.log(inputElem)
+    console.log(checkedFilled)*/
+
+
+
+//CHANGE BUTTON TO RED WHEN SAVE BUTTON IS CLICKED
+
     $("#button9").click(function () {
       $("#input9").css('background-color', '#ff6666');
     });
@@ -160,27 +172,41 @@
     $("#button10").click(function () {
       $("#input10").css('background-color', '#ff6666');
     });
+
     $("#button11").click(function () {
       $("#input11").css('background-color', '#ff6666');
     });
+
     $("#button12").click(function () {
       $("#input12").css('background-color', '#ff6666');
     });
+
     $("#button1").click(function () {
       $("#input1").css('background-color', '#ff6666');
     });
+
     $("#button2").click(function () {
       $("#input2").css('background-color', '#ff6666');
     });
+    
     $("#button3").click(function () {
       $("#input3").css('background-color', '#ff6666');
     });
+
     $("#button4").click(function () {
       $("#input4").css('background-color', '#ff6666');
     });
+    
     $("#button5").click(function () {
       $("#input5").css('background-color', '#ff6666');
     });
+
+
+//  ??????????? SAVE INPUT IN LOCAL STORAGE
+  
+    let myInput = document.querySelectorAll("input.value");
+    console.log(myInput)
+
 
 
   </script>
